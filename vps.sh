@@ -37,6 +37,7 @@ then
 apt-get update
 apt-get install squid3 -y
 apt-get install squid -y
+yum install squid -y
 clear
 figlet Legados
 echo  "$cyanClaro Qual seu nome ?"
@@ -54,6 +55,7 @@ echo "http_access allow liberado" >> squid.conf
 echo "http_access deny all" >> squid.conf
 echo "Port 443" >> /etc/ssh/sshd_config
 service ssh restart
+service sshd restart
 service squid restart 1> /dev/null 2>/dev/null
 service squid3 restart 1> /dev/null 2>/dev/null
 echo "\033[44;1;37mSua vps foi configurada $nome\033[0m "
